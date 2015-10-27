@@ -126,6 +126,16 @@
 
         <script src="js/main.js"></script>
         <script src="js/playerStats.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(".carousel-overlay").hover(function(){
+                $(this).addClass("carousel-overlay-active");
+            }, function(){
+                $(this).removeClass("carousel-overlay-active");
+            });
+            $(".carousel-control").hover(function(){
+                $(".carousel-overlay").removeClass("carousel-overlay-active");
+            })
+        </script>
         <script>
             $(document).ready(function(){
                 var $driverCarousel = $('#driver-selection');

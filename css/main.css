@@ -102,7 +102,7 @@ video#bgvid {
 }
 
 
-#driver-selection:hover .carousel-overlay {
+#driver-selection .carousel-overlay.carousel-overlay-active {
     opacity:1;
 }
 #driver-selection .carousel-overlay #driver-select-btn-container {
