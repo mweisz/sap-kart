@@ -6,11 +6,34 @@
 
 
 
+body {
+    background-color: #303030;
+    margin: auto;
+    padding: 0;
+}
 
+#header-bar {
+    padding-top: 2px;
+    padding-left: 2px;
+    height: 44px;
+    width: inherit;
+    background-color: #141414;
 
+}
 
+#content-wrapper {
+    width:100%; 
+    height:100%;
+     padding-left: 50px; 
+     padding-right: 50px;
+     padding-top: 50px;
+}
 
-
+#content-box {
+    width: 100%;
+    height: 800px;
+    background-color: #3D3D3C;
+}
 
 
 
