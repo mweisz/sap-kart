@@ -212,3 +212,16 @@ body {
     color: white;
 
 }
+
+#overlay-badge-info{
+    position: absolute;
+    height: 200px;
+    width: 30%;
+    top: 40%;
+    left: 35%;
+    text-align: center;
+    background-color: #303030;
+    opacity: 0.75;
+    border-radius: 25px;
+    color: white;
+}
