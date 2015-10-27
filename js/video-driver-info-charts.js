@@ -3,6 +3,9 @@
  * @author Torstein Honsi
  */
 
+
+ var heartRates = [120, 124, 150, 173, 180, 160, 140, 130, 128, 120, 22, 42, 22, 42, 22, 42, 22, 42]
+
 // Load the fonts
 Highcharts.createElement('link', {
    href: '//fonts.googleapis.com/css?family=Unica+One',
@@ -208,10 +211,48 @@ Highcharts.setOptions(Highcharts.theme);
 
 $(function () {
     $('#highcharts-container').highcharts({
+      chart: {
+        events: {
+          load: function () {
+             // HEARTRATE
+             var xStart = 90;
+                    var seriesHeartRate = this.series[0];
+                    var seriesFatigue = this.series[1];
+                    setInterval(function () {
+                      xStart += 10;
+                        var x = xStart, // current time
+                            yHeartRate = Math.random() * (160 - 140) + 140; ;
+                            $("#info-heartrate").text(Math.floor(yHeartRate) + " bpm");
+                            if(x %100 == 0) {
+                              yFatigue = 20 + (x/200);
+                               $("#info-fatigue").text(Math.floor(yFatigue) + "%" );
+                            }
+                            yPupils = Math.random() * (82 - 79) + 79; ;
+                            $("#info-pupils").text(Math.floor(yPupils) + "%" );
+
+                        seriesHeartRate.addPoint([x, yHeartRate], true, true);
+                        seriesFatigue.addPoint([x, yFatigue], true, true);
+
+                    }, 1000);
+
+
+             // HEARTRATE
+             // var xFatigueStart = 90;
+             //        var series = this.series[1];
+             //        setInterval(function () {
+             //          xFatigueStart += 10;
+             //            var x2 = xFatigueStart, // current time
+             //                yFatigue = Math.random() * (24 - 22) + 22; ;
+             //            series.addPoint([x2, yFatigue], true, true);
+             //        }, 1000);
+          }
+        }
+      },
         title: {
             text: 'Driver Stats',
             x: -20 //center
         },
+
         xAxis: {
             categories: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
         },
@@ -239,8 +280,8 @@ $(function () {
             data: [120, 124, 150, 173, 180, 160, 140, 130, 128, 120]
         }
         , {
-            name: 'Pupil Dialation',
-            data: [72, 73, 74, 80, 75, 80, 80, 78, 82, 84]
+            name: 'Fatigue Index',
+            data: [20,20,20,20,20,20,20,20,20,21,21]
         }
         ]
     });
