@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="css/tables.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
     </head>
     <body>
 
@@ -118,7 +120,7 @@
             <td>Oct 11</td>
             <td>Lewis Hamilton</td>
             <td>
-                <button onclick="location.href='driverSelection.html'" type="button" class="btn btn-success" aria-label="Left Align">Participate
+                <button onclick="location.href='driverSelection.html'" type="button" class="btn btn-success" aria-label="Left Align">Participate  (<span id="starts-in">13:44</span>)
                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>
 </td>
@@ -141,6 +143,7 @@
             <td>Grand Prix</td> 
             <td>Nov 1</td>
             <td>11:00 AM (in 5 days)</td>
+
             <td>
                               <button type="button" class="btn btn-default disabled" aria-label="Left Align">upcoming...
                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -155,7 +158,9 @@
             <td>Grand Prix</td> 
             <td>Nov 15</td>
             <td>8:00 AM</td>
+
             <td>
+
                               <button type="button" class="btn btn-default disabled" aria-label="Left Align">upcoming...
                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
                 </button>
@@ -168,6 +173,7 @@
             <td>Grand Prix</td> 
             <td>Nov 29</td>
             <td>5:00 AM</td>
+
             <td>
                               <button type="button" class="btn btn-default disabled" aria-label="Left Align">upcoming...
                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
@@ -184,6 +190,17 @@
 
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script> 
+          setInterval(change, 1000);
+            var counter = 823;
+          var elem = document.getElementById("starts-in");
+              function change() {
+               elem.innerHTML = Math.floor(counter / 60) + ":" + (counter % 60);
+                  counter--;
+              }
+
+        </script>
+
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
