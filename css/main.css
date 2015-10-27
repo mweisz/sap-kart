@@ -105,8 +105,17 @@ video#bgvid {
 #driver-selection:hover .carousel-overlay {
     opacity:1;
 }
-#driver-selection .carousel-overlay > div {
+#driver-selection .carousel-overlay #driver-select-btn-container {
     height: 100%;
+}
+#driver-selection .carousel-caption {
+    background:rgba(0,0,0,0.2);
+}
+#driver-selection #player_stats {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(125%, -50%);
 }
 #driver-selection .carousel-overlay button {
     position: relative;
@@ -114,6 +123,9 @@ video#bgvid {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+#driver-selection .carousel-overlay #player_stats .list-group-item {
+    background-color: transparent;
 }
 
 .footer

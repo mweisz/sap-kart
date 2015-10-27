@@ -75,12 +75,29 @@
 
               </div>
               <div class="carousel-overlay">
-                  <div class="col-lg-push-2 col-lg-8 center-block">
-                      <button onclick="location.href='video.html'" type="button" class="btn btn-primary btn-lg">
+                  <div id="driver-select-btn-container" class="col-lg-push-2 col-lg-8 center-block">
+                      <button onclick="location.href='video.html'" type="button" class="btn-success btn-lg">
                           <!--TODO: link to video page -->
                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                          Choose Player
                       </button>
+                  </div>
+                  <div class="panel" id="player_stats">
+
+                      <!-- Table -->
+                      <table class="table">
+                          <tbody>
+                          <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                          </tr>
+                          <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                          </tr>
+                          </tbody>
+                      </table>
+
+                  </div>
                   </div>
               </div>
               <!-- Controls -->
@@ -106,9 +123,53 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+        <script src="js/playerStats.js" type="text/javascript"></script>
         <script>
             $(document).ready(function(){
-                $('#driver-selection').carousel();
+                var $driverCarousel = $('#driver-selection');
+                $driverCarousel.carousel();
+                var renderPlayerStats = function renderPlayerStats(){
+                    var item = $(".item.active");
+                    var $statsTable = $(" #player_stats table");
+                    $statsTable.html("");
+                    var caption = this.querySelector(".item.active > .carousel-caption");
+                    if (caption) {
+                        var name = caption.textContent.trim();
+                        var stats = playerStats[name];
+                        var row;
+                        var attrs = [
+                            "Team",
+                            "Country",
+                            "Podiums",
+                            "Grands Prix entered",
+                            "World Championships",
+                            "Highest race finish",
+                            "Highest grid position",
+                            "Date of birth",
+                            "Place of birth"
+                        ];
+                        if (stats){
+                            row  = "<tr><th scope='row'>"+"Name"+"</th>"+"<td>"+name+"</td>"+"</tr>"
+                            $statsTable.append(row);
+                            attrs.forEach(function(attr){
+                                if (stats[attr]){
+                                    row  = "<tr><th scope='row'>"+attr+"</th>"+"<td>"+stats[attr]+"</td>"+"</tr>"
+                                    $statsTable.append(row);
+                                }
+
+                            })
+
+                        } else {
+                            console.error("expected to find player stats for " + name);
+                        }
+                    } else {
+                        console.error("expected to find active player caption");
+                    }
+                };
+                renderPlayerStats.apply($driverCarousel[0]);
+                $driverCarousel .on('slide.bs.carousel', function() {
+                    renderPlayerStats.apply(this);
+                })
             });
         </script>
     </body>
