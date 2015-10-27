@@ -33,11 +33,30 @@ body {
     width: 100%;
     height: 800px;
     background-color: #3D3D3C;
+    color: white;
 }
 
 
 
 
+table, th, td {
+    border: 1px solid black;
+}
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+
+    font: 24px Arial, sans-serif;
+}
 
 
 
