@@ -123,6 +123,37 @@ bottom:00px;
 width:100%;
 }
 
+.header
+{
+position:absolute;
+width:100%;
+}
+
+.bluetrans
+{
+opacity: 0.95;
+background-color: #007CC0;
+color:white;
+font: 23px Arial, sans-serif;
+height:38px;
+text-align: left;
+padding: 4px;
+width:320px;
+}
+
+
+.greentrans
+{
+opacity: 0.95;
+background-color: #3EAD96;
+color:white;
+font: 23px Arial, sans-serif;
+height:38px;
+text-align: left;
+padding: 4px;
+width:320px;
+}
+
 
 .speed
 {
