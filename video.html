@@ -98,7 +98,8 @@
                     time = 2214;
                     var changeTime = function () {
                         time++;
-                        document.getElementById('overlay-time').innerHTML = Math.floor(time/60) + ":" + (time%60);
+                        var seconds = time % 60;
+                        document.getElementById('overlay-time').innerHTML = Math.floor(time/60) + ":" + (seconds > 10 ? seconds : "0" + seconds);
 
                         
                     };
