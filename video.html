@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+
+    <div id="header-bar" style="background-color:transparent"><img  src="img/sap-logo.png" /> 
+    </div>
+<div align="right" class="speed"><span  id="speedText"> 0</span></div>
+
+<div id="content-wrapper">
+      <div id="content-box" style="background-color:transparent">
+        <video id="bgvid" autoplay loop style"padding:0px">
+            <!-- width="1280" height="960"  -->
+         <source src="video.mp4" type="video/mp4">
+        </video>
+      </div>
+</div>
+<div class="footer" align="right"><img src="pictures/heart.gif" height="70" width="100"/></div>
+
+
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+         <script>
+    document.getElementById('bgvid').currentTime = 43;
+    var speed = 1;
+    var changeSpeed = function () {
+        // speed = speed + 1;
+        if (speed < 15) {
+           speed = speed + 1;
+        } else {
+            speed = speed + Math.floor(Math.floor(2*Math.random()-0.3));
+            if (speed < 2) {
+                speed = 0;
+            }
+        }
+        if (speed > 200) {
+            speed = speed - 3;
+        }
+        
+         $("#speedText").text(String(speed));
+    };
+       
+       setInterval(changeSpeed,100);
+   </script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
+
