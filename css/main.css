@@ -41,8 +41,7 @@ h1 {
     margin-bottom: 25px;
 }
 
-
-#driver-selection, #driver-selection .carousel-inner {
+#driver-selection, #driver-selection .carousel-inner, #driver-selection .carousel-inner .item {
    height: calc(100vh - 144px);
 }
 
