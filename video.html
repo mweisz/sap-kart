@@ -22,7 +22,6 @@
 
     <div id="header-bar" style="background-color:transparent"><img  src="img/sap-logo.png" /> 
     </div>
-<div align="right" class="speed"><span  id="speedText"> 0</span></div>
 
 <div id="content-wrapper">
       <div id="content-box" style="background-color:transparent">
@@ -32,8 +31,17 @@
         </video>
       </div>
 </div>
+<div class="speed"><span  id="speedText"> 0</span></div>
 <div id="overlay-tacho"><img height="200" width="200" src="img/odometer.png"></div>
-<div class="footer" align="right"></div>
+
+<div id="overlay-driver-info" style="display:none;">
+    <img height="180" width="776" src="img/driver-info-header.png">
+    <span style="margin-right: 78px; margin-left:22px">178bpm</span><span style="margin-right: 137px;">80%</span><span style="margin-right: 120px;">20%</span><span>38.5°</span>
+
+<div id="highcharts-container" style="min-width: 776px; height: 180px; margin: 0 auto"></div>
+
+</div>
+<div class="footer" align="left"> <img onclick="$('#overlay-driver-info').toggle()" src="pictures/selectors.png" /> </div>
 
 
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -55,6 +63,8 @@
         if (speed > 200) {
             speed = speed - 3;
         }
+
+        
         
          $("#speedText").text(String(speed));
     };
@@ -65,6 +75,10 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="js/video-driver-info-charts.js"></script>
 
     </body>
 </html>

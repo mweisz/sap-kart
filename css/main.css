@@ -118,16 +118,27 @@ video#bgvid {
 
 .footer
 {
-position:absolute
-bottom:0px;
+position:absolute;
+bottom:00px;
 width:100%;
 }
 
 
 .speed
 {
-	font: 100px Arial, sans-serif;
+    position: absolute;
+    right: 80px;
+    bottom: 120px;
+	font: 50pt Arial, sans-serif;
 	color: white;
+    z-index: 100;
+    width: 130px;
+    text-align: center;
+    color:#eee;
+}
+
+body {
+    overflow:hidden;
 }
 
 
@@ -153,4 +164,20 @@ width:100%;
     bottom:50px;
     right:50px;
     opacity: 0.75;
+}
+
+#overlay-driver-info {
+    position: absolute;
+    height: 400px;
+    width: 776px;
+    bottom:50px;
+    left:1px;
+    opacity: 0.95;
+    background-color: #3EAD96;
+}
+
+#overlay-driver-info span  {
+    font-size: 20pt;
+    color: white;
+
 }
