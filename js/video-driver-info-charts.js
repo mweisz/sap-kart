@@ -3,8 +3,23 @@
  * @author Torstein Honsi
  */
 
+ var heartRates = [];
 
- var heartRates = [120, 124, 150, 173, 180, 160, 140, 130, 128, 120, 22, 42, 22, 42, 22, 42, 22, 42]
+  $.ajax({
+      url: 'https://DEV_3AFTW8HX5C20XFIA31D8GZN93:Abcd1234@s11hanaxs.hanatrial.ondemand.com/i848739trial/fabian/test/Callee.xsjs',
+      data: {},
+      type: 'GET',
+      cache: false,
+      success: function(resultStr){
+          var result = JSON.parse(resultStr);
+          heartRates.concat(result.heartRates);
+          console.log(heartRates);
+      },
+      error: function(){
+        heartRates.concat([120, 124, 150, 173, 180, 160, 140, 130, 128, 120, 22, 42, 22, 42, 22, 42, 22, 42]);
+      }
+  });
+
 
 // Load the fonts
 Highcharts.createElement('link', {
