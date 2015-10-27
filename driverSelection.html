@@ -81,6 +81,8 @@
                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                       </button>
                   </div>
+                  <div id="helmet">
+                  </div>
                   <div class="panel" id="player_stats">
 
                       <!-- Table -->
@@ -128,14 +130,29 @@
             $(document).ready(function(){
                 var $driverCarousel = $('#driver-selection');
                 $driverCarousel.carousel();
-                var renderPlayerStats = function renderPlayerStats(){
+                var renderPlayerStats = function renderPlayerStats(event){
                     var item = $(".item.active");
                     var $statsTable = $(" #player_stats table");
                     $statsTable.html("");
-                    var caption = this.querySelector(".item.active > .carousel-caption");
+                    var caption;
+                    if (!event) {
+                        caption = this.querySelector(".item.active > .carousel-caption");
+                    } else {
+                        caption = event.relatedTarget.querySelector(".carousel-caption");
+                    }
                     if (caption) {
                         var name = caption.textContent.trim();
                         var stats = playerStats[name];
+                        var $helmet = $("#helmet");
+                        $helmet.html("");
+                        $helmet.append("<h1>"+name+"</h1>");
+                        if (stats){
+                            $helmet.append("<h3> #"+stats["number"]+"</h3>");
+                        }
+                        $helmet.append(
+                            $("<img>").attr("src", "./img/helmets/"+ name.toLocaleLowerCase().trim().split(" ").join("-") + "-helmet.png")
+                        );
+
                         var row;
                         var attrs = [
                             "Team",
@@ -168,7 +185,7 @@
                 };
                 renderPlayerStats.apply($driverCarousel[0]);
                 $driverCarousel .on('slide.bs.carousel', function() {
-                    renderPlayerStats.apply(this);
+                    renderPlayerStats.apply(this, arguments);
                 })
             });
         </script>

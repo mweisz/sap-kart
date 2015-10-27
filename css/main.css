@@ -124,6 +124,13 @@ video#bgvid {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+#helmet {
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+}
 #driver-selection .carousel-overlay #player_stats .list-group-item {
     background-color: transparent;
 }
