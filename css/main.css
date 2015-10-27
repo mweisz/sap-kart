@@ -130,3 +130,18 @@ width:100%;
 	color: white;
 }
 
+
+#overlay-time-lap-info {
+    position: absolute;
+    background-color: #007CC0;
+    opacity: 0.95;
+    top:25px;
+    left: 40%;
+    height: 38px;
+    width: 20%;
+
+    font-size: 18pt;
+    color:white;
+    text-align: center;
+
+}
