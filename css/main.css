@@ -145,3 +145,12 @@ width:100%;
     text-align: center;
 
 }
+
+#overlay-tacho {
+    position: absolute;
+    height: 200px;
+    width: 200px    ;
+    bottom:50px;
+    right:50px;
+    opacity: 0.75;
+}
