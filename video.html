@@ -16,7 +16,7 @@
     </head>
     <body>
         <div id="overlay-time-lap-info">
-            <img src="img/stopwatch.png"> <span id="overlay-time" style="margin-right:25px;">23:12:521</span> <img src="img/flag.png"> <span>4/10</span>
+            <img src="img/stopwatch.png"> <span id="overlay-time" style="margin-right:25px;">36:55</span> <img src="img/flag.png"> <span>4/10</span>
         </div>
 
 
@@ -42,38 +42,66 @@
         </video>
       </div>
 </div>
-<div class="footer" align="left"> <img src="pictures/selectors.png" /> </div>
+<div class="speed"><span  id="speedText"></span></div>
+<div id="overlay-tacho"><img height="200" width="200" src="img/odometer.png"></div>
+
+<div id="overlay-driver-info" style="display:none;">
+    <img height="180" width="776" src="img/driver-info-header.png">
+    <span style="margin-right: 78px; margin-left:22px">178bpm</span><span style="margin-right: 137px;">80%</span><span style="margin-right: 120px;">20%</span><span>38.5°</span>
+
+<div id="highcharts-container" style="min-width: 776px; height: 180px; margin: 0 auto"></div>
+
+</div>
+<div class="footer" align="left"> <img onclick="$('#overlay-driver-info').toggle()" src="pictures/selectors.png" /> </div>
 
 
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
          <script>
-    document.getElementById('bgvid').currentTime = 43;
-    var speed = 1;
-    var changeSpeed = function () {
-        // speed = speed + 1;
-        if (speed < 15) {
-           speed = speed + 1;
-        } else {
-            speed = speed + Math.floor(Math.floor(2*Math.random()-0.3));
-            if (speed < 2) {
-                speed = 0;
-            }
-        }
-        if (speed > 200) {
-            speed = speed - 3;
-        }
-        
-         $("#speedText").text(String(speed));
-    };
-       
-       setInterval(changeSpeed,100);
+         // SPEED
+                    document.getElementById('bgvid').currentTime = 43;
+                    var speed = 1;
+                    var changeSpeed = function () {
+                        // speed = speed + 1;
+                        if (speed < 100) {
+                           speed = speed + 1;
+                        } else {
+                            speed = speed + Math.floor(Math.floor(2*Math.random()-0.3));
+                            if (speed < 2) {
+                                speed = 0;
+                            }
+                        }
+                        if (speed > 200) {
+                            speed = speed - 3;
+                        }
+                        
+                         $("#speedText").text(String(speed));
+                    };
+                       setInterval(changeSpeed,100);
+
+            // END SPEED
+
+            // TIME
+                    time = 2214;
+                    var changeTime = function () {
+                        time++;
+                        document.getElementById('overlay-time').innerHTML = Math.floor(time/60) + ":" + (time%60);
+
+                        
+                    };
+                       setInterval(changeTime,1000);
+
+            // END TIME            
    </script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="js/video-driver-info-charts.js"></script>
 
     </body>
 </html>
