@@ -22,166 +22,25 @@
     <div id="header-bar"><img  src="img/sap-logo.png" /> </div>
 
 <div id="content-wrapper">
-      <div id="content-box">
+      <div id="content-box" style="padding-top:75px;background-image: url('img/logInBGImage.png')">
 
-      <h1>Standings </h1>
+      <h1 style="font-size:72pt; margin-top:30px;">Become the Driver </h1>
 
-       <table class="table table-striped  table-hover " align="center" style="width:100%;text-align:center">
-          <tr>
-            <th style="text-align:center">Stand</th>
-            <th style="text-align:center">Name</th> 
-            <th style="text-align:center">Overall Score</th>
-            <th style="text-align:center">Badges</th>
-          </tr>
-          <tr>
-            <td align="center"><div class="numberCircle">1</div></td>
-            <td>Julia</td> 
-            <td>327 PTS</td>
-            <td>
-              5
-              <img src="pictures/BFHL_Service_Stars_bronz.png" style="width:20px;height:20px;">
-              2
-              <img src="pictures/BFHL_Service_Stars_silver.png" style="width:20px;height:20px;">
-              1
-              <img src="pictures/BFHL_Service_Stars_gold.png" style="width:20px;height:20px;">
-            </td>
-          </tr>
-          <tr>
-            <td align="center"><div class="numberCircle">2</div></td>
-            <td>Benjamin27</td> 
-            <td>251 PTS</td>
-            <td>
-              5
-              <img src="pictures/BFHL_Service_Stars_bronz.png" style="width:20px;height:20px;">
-              2
-              <img src="pictures/BFHL_Service_Stars_silver.png" style="width:20px;height:20px;">
-              1
-              <img src="pictures/BFHL_Service_Stars_gold.png" style="width:20px;height:20px;">
-            </td>
-          </tr>
-          <tr>
-            <td align="center"><div class="numberCircle">3</div></td>
-            <td>Natalie</td> 
-            <td>247 PTS</td>
-            <td>
-              5
-              <img src="pictures/BFHL_Service_Stars_bronz.png" style="width:20px;height:20px;">
-              2
-              <img src="pictures/BFHL_Service_Stars_silver.png" style="width:20px;height:20px;">
-              1
-              <img src="pictures/BFHL_Service_Stars_gold.png" style="width:20px;height:20px;">
-            </td>
-          </tr>
-          <tr >
-            <td style="background-color:#4e6042;" align="center"><div class="numberCircle">4</div></td>
-            <td style="background-color:#4e6042;">You</td> 
-            <td style="background-color:#4e6042;">123 PTS</td>
-            <td style="background-color:#4e6042;">
-              5
-              <img src="pictures/BFHL_Service_Stars_bronz.png" style="width:20px;height:20px;">
-              2
-              <img src="pictures/BFHL_Service_Stars_silver.png" style="width:20px;height:20px;">
-              1
-              <img src="pictures/BFHL_Service_Stars_gold.png" style="width:20px;height:20px;">
-            </td>
-          </tr>
-          <tr>
-            <td align="center"><div class="numberCircle">5</div></td>
-            <td>Mark_Racer</td> 
-            <td>111 PTS</td>
-            <td>
-              5
-              <img src="pictures/BFHL_Service_Stars_bronz.png" style="width:20px;height:20px;">
-              2
-              <img src="pictures/BFHL_Service_Stars_silver.png" style="width:20px;height:20px;">
-              1
-              <img src="pictures/BFHL_Service_Stars_gold.png" style="width:20px;height:20px;">
-            </td>
-          </tr>
-        </table>
-          <br/>
+      <div style="width:30%; margin:auto; margin-top:200px;">
+          <div class="input-group input-group-lg" style="margin-bottom: 5px;">
+              <span class="input-group-addon" id="sizing-addon1">Name</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+          </div>
+            <div class="form-group-lg" style="margin-bottom: 5px;">
+            <!-- <label for="pwd">Password:</label> -->
+            <input type="password" placeholder="Password" class="form-control with-errors" id="pwd">
+            <div class="help-block "></div>
+            </div>
+            <button type="submit" class="btn btn-default" onclick="checkPW()">Login</button>
+  
+</div>
 
-
-        <h1>Upcoming Races </h1>
-        <table class="table table-striped "style="width:100%; text-align:center">
-          <tr>
-            <th style="text-align:center">#</th>
-            <th style="text-align:center">City</th>
-            <th style="text-align:center">Race</th> 
-            <th style="text-align:center">Date</th>
-            <th style="text-align:center">Winner / Time</th>
-            <th></th>
-
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>Russian</td>
-            <td>Grand Prix</td> 
-            <td>Oct 11</td>
-            <td>Lewis Hamilton</td>
-            <td>
-                <button onclick="location.href='driverSelection.html'" type="button" class="btn btn-success" aria-label="Left Align">Participate  (<span id="starts-in">13:44</span>)
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                </button>
-</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>United States</td>
-            <td>Grand Prix</td> 
-            <td>Oct 25</td>
-            <td>Lewis Hamilton</td>
-            <td>
-                              <button type="button" class="btn btn-default disabled" aria-label="Left Align">upcoming...
-                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                </button>
-            </td>
-          </tr>
-          <tr>
-            <td>17</td>
-            <td>Mexican</td>
-            <td>Grand Prix</td> 
-            <td>Nov 1</td>
-            <td>11:00 AM (in 5 days)</td>
-
-            <td>
-                              <button type="button" class="btn btn-default disabled" aria-label="Left Align">upcoming...
-                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                </button>
-
-            </td>
-
-          </tr>
-          <tr>
-            <td>18</td>
-            <td>Brazilian</td>
-            <td>Grand Prix</td> 
-            <td>Nov 15</td>
-            <td>8:00 AM</td>
-
-            <td>
-
-                              <button type="button" class="btn btn-default disabled" aria-label="Left Align">upcoming...
-                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                </button>
-            </td>
-
-          </tr>
-          <tr>
-            <td>19</td>
-            <td>Abu Dhabi</td>
-            <td>Grand Prix</td> 
-            <td>Nov 29</td>
-            <td>5:00 AM</td>
-
-            <td>
-                              <button type="button" class="btn btn-default disabled" aria-label="Left Align">upcoming...
-                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                </button>
-            </td>
-
-          </tr>
-        </table>
+      
 
       </div>
 </div>
@@ -205,5 +64,18 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
+
+        <script type="text/javascript">
+
+        function checkPW(){
+          if(document.getElementById('pwd').value == 'password') {
+            location.href='overview.html';
+          } else {
+            document.getElementById('pwd').style.borderColor="red";
+            document.getElementById('pwd').style.borderSize="5";
+          }
+
+        }
+        </script>
     </body>
 </html>
